@@ -2,7 +2,7 @@ body {
   background: linear-gradient(45deg,#20242a, #203542, #485a72); /*2c4a52*/
   background-size: 300% 300%;
 
-  font-family: "Minecraft Regular", monospace, arial;
+  font-family: "Pixelify Sans", "Minecraft Regular", monospace, arial;
 
   animation: bgGradientMove 30s ease-in-out infinite;
 }
@@ -199,7 +199,7 @@ p {
   background: linear-gradient(0deg, #18243d, #046307); /*#111827*/
   
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
 
   width: 250px;
   padding: 20px;
