@@ -16,7 +16,7 @@ margin-top: 10px;
 /* Definitions I guess */
 @font-face {
   font-family: "Minecraft";
-  src: url("/..Assets/Fonts/minecraft_font.ttf")
+  src: url("Assets/Fonts/minecraft_font.ttf")
 format("truetype");
 }
 
