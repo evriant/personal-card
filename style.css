@@ -1,177 +1,236 @@
 body {
-    background: linear-gradient(180deg, #334155, #2c4a52, #4b5563);
-    
-    font-family: "Minecraft", monospace, arial;
+  background: linear-gradient(45deg,#20242a, #203542, #485a72); /*2c4a52*/
+  background-size: 300% 300%;
 
-    animation: drop-dowm 1s ease;
-  }
+  font-family: "Minecraft", monospace, arial;
 
-hr {
-  border: 2px solid rgba(255, 255, 255, 0.982);
-  margin-bottom: 10px;
-  margin-top: 10px;
+  animation: bgGradientMove 30s ease-in-out infinite;
 }
 
-  /* Definitions I guess */
-  @font-face {
-    font-family: "Minecraft";
-    src: url("GitHub-Projects\BusinessCard\Assets\Fonts\minecraft_font.ttf")
-  format("truetype");
+hr {
+border: 2px solid rgba(255, 255, 255, 0.982);
+margin-bottom: 10px;
+margin-top: 10px;
+}
+
+/* Definitions I guess */
+@font-face {
+  font-family: "Minecraft";
+  src: url("/..Assets/Fonts/minecraft_font.ttf")
+format("truetype");
+}
+
+@keyframes drop-down {
+  from {
+      opacity: 0;
+      transform: translateY(-30px);
   }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes bgGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Paragraph */
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  color: white;
+
+  transition: transform 0.3s ease;
+}
+
+/* Links */
+.glowlink {
+  font-style: normal;
+  text-decoration: none; 
+  text-shadow: none;
+  display: inline-block;
+
+  transition: text-shadow 0.5s ease, transform 0.5s ease, filter 0.5s ease;
+}
+
+.glowlink:hover {
+  text-shadow: 0 0 10px currentColor;
+
+  transform: scale(1.2);
+}
+
+
+/* Social Media*/
+.social-links {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 9px;
+  padding: 0px;
+}
+
+
+.social-links:has(.glowlink:nth-child(1):hover) .glowlink:nth-child(2),
+.social-links:has(.glowlink:nth-child(1):hover) .glowlink:nth-child(3)
+{
+  transform: translateX(4.5px) scale(0.96);
+  filter: blur(0.8px);
+}
+
+.social-links:has(.glowlink:nth-child(3):hover) .glowlink:nth-child(1),
+.social-links:has(.glowlink:nth-child(3):hover) .glowlink:nth-child(2)
+{
+  transform: translateX(-4.5px) scale(0.96);
+  filter: blur(0.8px);
+}
+
+.social-links:has(.glowlink:nth-child(2):hover) .glowlink:nth-child(1)
+{
+  transform: translate(-8px) scale(0.96);
+  filter: blur(0.8px);
+}
+
+.social-links:has(.glowlink:nth-child(2):hover) .glowlink:nth-child(3)
+{
+  transform: translate(8px) scale(0.96);
+  filter: blur(0.8px);
+}
+
+.social-media > h2 {
+  color: white;
+
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+.cardtwitter {
+  color: rgb(128, 176, 202);
+}
+
+.cardlinkedin {
+  color: rgb(111, 111, 210);
+}
+
+.cardgithub {
+  color: rgb(231, 193, 123);
+}
+
+/* Contacts Section */
+.cardportfolio {
+  color: rgb(176, 176, 176)
+}
+
+.contact {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+
+  transition: transform 0.3s ease;
+}
+
+.contact:hover {
+  transform: scale(1.07);
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 0px;
+
+  margin-top: -3px;
+
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.contact-links:has(.glowlink:nth-child(1):hover) .glowlink:nth-child(2),
+.contact-links:has(.glowlink:nth-child(1):hover) .glowlink:nth-child(3)
+{
+  transform: translateY(2px);
+  filter: blur(0.75px);
+}
+
+.contact-links:has(.glowlink:nth-child(3):hover) .glowlink:nth-child(1),
+.contact-links:has(.glowlink:nth-child(3):hover) .glowlink:nth-child(2)
+{
+  transform: translateY(-2px);
+  filter: blur(0.75px);
+}
+
+.contact-links:has(.glowlink:nth-child(2):hover) .glowlink:nth-child(1)
+{
+  transform: translateY(-3px);
+  filter: blur(0.75px);
+}
+
+.contact-links:has(.glowlink:nth-child(2):hover) .glowlink:nth-child(3)
+{
+  transform: translateY(3px);
+  filter: blur(0.75px);
+}
+
+/* Card */
+.business-card {
+  box-shadow: 0px 0px 20px black;
+
+  /*background: linear-gradient(0deg, #212121, #8B5CF6);*/
+  background: linear-gradient(0deg, #18243d, #046307); /*#111827*/
   
-  @keyframes drop-down {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-  }
+  text-align: center;
+  font-size: 15px;
+
+  width: 250px;
+  padding: 20px;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 10px;
+
+  transition: transform 0.3s ease;
+}
+
+.business-card:hover {
+  transform: translateY(-10px) scale(1.03);
+
+  border-color: white;
+}
+
+/* Profile Image */
+.profile-image {
+  max-width: 100%;
+  width: 250px;
+  padding: auto;
+  margin: auto;
+  margin-bottom: 5px;
+
+  image-rendering: pixelated;
+  display: inline-block;
+  vertical-align: middle;
+
+  outline: 2px solid #ffffff;
+  border-radius: 10px;
   
-  /* Paragraph */
-  p {
-    margin-top: 5px;
-    margin-bottom: 5px;
+  transition: outline 0.2s ease, scale 0.5s ease;
+}
 
-    color: white;
+.profile-image:hover { 
+  outline: 4px solid /*#f6d75c*/white;
 
-    transition: transform 0.3s ease;
-  }
-  
-  /* Links */
-  .glowlink {
-    font-style: normal;
-    text-decoration: none; 
-    text-shadow: none;
+  transform: scale(1.01);
+}
 
-    transition: text-shadow 0.5s ease, transform 0.5s ease;
-  }
-
-  .glowlink:hover {
-    text-shadow: 0 0 10px currentColor;
-
-    transform: scale(1.2);
-  }
-  
-  .social-links {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 9px;
-    padding: 0px;
-  }
-
-  .social-links:has(.glowlink:nth-child(1):hover) .glowlink:nth-child(2),
-  .social-links:has(.glowlink:nth-child(1):hover) .glowlink:nth-child(3)
-  {
-    transform: translateX(5px) scale(0.97);
-  }
-
-  .social-links:has(.glowlink:nth-child(3):hover) .glowlink:nth-child(1),
-  .social-links:has(.glowlink:nth-child(3):hover) .glowlink:nth-child(2)
-  {
-    transform: translateX(-5px) scale(0.97);
-  }
-
-  .social-links:has(.glowlink:nth-child(2):hover) .glowlink:nth-child(1)
-  {
-    transform: translate(-7px) scale(0.97);
-  }
-
-  .social-links:has(.glowlink:nth-child(2):hover) .glowlink:nth-child(3)
-  {
-    transform: translate(7px) scale(0.97);
-  }
-
-  .social-media > h2 {
-    color: white;
-
-    margin-top: 2px;
-    margin-bottom: 8px;
-  }
-
-  /*.pill-box {
-    background-color: #141e33;
-    padding: 5px;
-    box-shadow: 
-      inset 0 0 20px rgb(0, 0, 0);
-    border-radius: 10px;
-    align-items: center;
-  }*/
-
-  .cardportfolio {
-    color: rgb(176, 176, 176)
-  }
-  
-  .cardtwitter {
-    color: rgb(128, 176, 202);
-  }
-
-  .cardlinkedin {
-    color: rgb(111, 111, 210);
-  }
-
-  .cardgithub {
-    color: rgb(231, 193, 123);
-  }
-
-  .contact {
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-
-    transition: transform 0.3s ease;
-  }
-
-  .contact:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Card */
-  .business-card {
-    box-shadow: 0px 0px 50px black;
-
-    /*background: linear-gradient(0deg, #212121, #8B5CF6);*/
-    background: linear-gradient(0deg, #18243d, #046307); /*#111827*/
-    
-    text-align: center;
-    font-size: 15px;
-
-    width: 250px;
-    padding: 20px;
-    margin-top: 75px;
-    margin-bottom: 75px;
-    margin-left: auto;
-    margin-right: auto;
-
-    border-radius: 10px;
-
-    transition: transform 0.3s ease;
-  }
-
-  .business-card:hover {
-    transform: translateY(-10px) scale(1.03);
-
-    border-color: white;
-  }
-  
-  /* Profile */
-  .profile-image {
-    max-width: 100%;
-    padding: auto;
-
-    image-rendering: pixelated;
-
-    border: 2px solid #8B5CF6;
-    border-radius: 10px;
-    
-    transition: border 0.3s ease;
-  }
-
-  .profile-image:hover { 
-    border: 2px solid white;
-  }
 
 
