@@ -2,7 +2,7 @@ body {
   background: linear-gradient(45deg,#20242a, #203542, #485a72); /*2c4a52*/
   background-size: 300% 300%;
 
-  font-family: "Minecraft", monospace, arial;
+  font-family: "Minecraft Regular", monospace, arial;
 
   animation: bgGradientMove 30s ease-in-out infinite;
 }
@@ -14,10 +14,21 @@ margin-top: 10px;
 }
 
 /* Definitions I guess */
-@font-face {
-  font-family: "Minecraft";
+@font-face { 
+  font-family: "MC-Old";
   src: url("Assets/Fonts/minecraft_font.woff2")
 format("truetype");
+}
+/* Font above is old, do not use, broken */
+
+@font-face {
+  font-family: "Minecraft Regular";
+  src: url("https://db.onlinewebfonts.com/t/6ab539c6fc2b21ff0b149b3d06d7f97c.eot");
+  src: url("https://db.onlinewebfonts.com/t/6ab539c6fc2b21ff0b149b3d06d7f97c.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/6ab539c6fc2b21ff0b149b3d06d7f97c.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/6ab539c6fc2b21ff0b149b3d06d7f97c.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/6ab539c6fc2b21ff0b149b3d06d7f97c.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/6ab539c6fc2b21ff0b149b3d06d7f97c.svg#Minecraft Regular")format("svg");
 }
 
 @keyframes drop-down {
